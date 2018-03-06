@@ -5,7 +5,7 @@
     <title>Register With Us</title>
 </head>
 <body>
-    <form method="POST" action="https://requestb.in/1m1hqli1">
+    <form method="GET" action="https://requestb.in/1m1hqli1">
 
         <label for="email">Email</label>
         <input id="email" name="email" type="text" placeholder="Enter Email ">
@@ -25,10 +25,10 @@
 
         <br>
 
-         <input type="radio" name="question_1" value="billboard"><label>Billboard</label><br>
-        <input type="radio" name="question_1" value="radio advertisement"><label>Radio Advertisement</label><br>
-        <input type="radio" name="question_1" value="internet advertisement"><lable>Internet Advertisement</lable><br>
-         <input type="radio" name="question_1" value="other"><label>Other</label><br>
+        <label><input name="billboard" value="true" type="checkbox" >Billboard</label>
+        <label><input name="radio advertisement" value="true" type="checkbox" >Radio Advertisement</label>
+        <label><input name="internet advertisement" value="true" type="checkbox" >Internet Advertisement</label>
+        <label><input name="Other" value="true" type="checkbox" >Other</label>
 
         <h3>What web browser are you using?</h3>
 
