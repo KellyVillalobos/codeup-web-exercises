@@ -31,3 +31,25 @@ body {
     background-color: beige;
 }
 
+main {
+    background-image: url(https://vignette.wikia.nocookie.net/scottpilgrim/images/3/35/Scott_p_by_radiomaru.png/revision/latest?cb=20101123010423);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;;
+    background-size: 20%;
+    font-family: 'Karma', serif;
+
+}
+
+ul {
+    list-style: square;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+
+
