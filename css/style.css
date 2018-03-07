@@ -43,13 +43,32 @@ main {
 
 ul {
     list-style: square;
+
 }
 
 th, td {
     border-bottom: 1px solid #ddd;
+    font-size: 2em;
+    padding: 10px 80px 10px 80px;
+
 
 }
 
+ a:link {
+    color:red;
+}
+
+a:visited {
+    color:black;
+}
+
+a:hover {
+    color:blue;
+}
+
+a:active {
+    color:green;
+}
 
 
 
