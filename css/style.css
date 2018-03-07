@@ -18,7 +18,10 @@ Add a style to change the table, table cells td and rows tr padding and font siz
 Add a style to alter the anchor tags and its different states. (e.g. link, visited, hover and active).
 Continue experimenting with styles to increase the visual appeal of the page.*/
 
-h1 {
+
+
+#center {
+
     text-align: center;
 }
 
@@ -39,15 +42,16 @@ main {
     background-size: 20%;
     font-family: 'Karma', serif;
 
+
 }
 
 ul {
-    list-style: square;
+    list-style-image: url("https://secure.gravatar.com/avatar/200f2a31fcab3c6c4fff71d2a19eb0cb?s=40&d=mm&r=g");
 
 }
 
 th, td {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 3px solid #ddd;
     font-size: 2em;
     padding: 10px 80px 10px 80px;
 
@@ -63,7 +67,7 @@ a:visited {
 }
 
 a:hover {
-    color:blue;
+    color:grey;
 }
 
 a:active {
