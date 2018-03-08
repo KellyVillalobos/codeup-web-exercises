@@ -12,6 +12,11 @@
     font-size: 15.5px;
 }
 
+.box:nth-child(5), .box:nth-child(7) {
+    clear: left;
+}
+
+
 #ribbon {
     position: absolute;
     top: 0;
@@ -32,7 +37,7 @@
 }
 #box-green {
     background-color: green;
-    clear: both;
+
 }
 #box-blue {
     background-color: blue;

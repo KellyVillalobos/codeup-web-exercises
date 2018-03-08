@@ -20,42 +20,66 @@ Continue experimenting with styles to increase the visual appeal of the page.*/
 
 
 
-#center {
+body {
+    background-color: seashell;
+    font-family: 'Karma', serif;
+}
 
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#center {
+    background: rgba(217, 217, 217, 0.94);
+    text-align: center;
+    background-attachment: fixed;
+}
+
+#container-top {
+    padding-top: 112px;
+}
+
+.about_us {
+    margin: auto;
+    padding-left: 18%;
+    float: left;
+}
+
+.about_us>p {
+    font-size: x-large;
+}
+
+.about_bar {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    overflow: hidden;
+    background-color: darkgrey;
     text-align: center;
 }
 
 h1, h2{
     color: purple;
     text-decoration: underline;
+    text-align: center;
 }
 
-body {
-    background-color: beige;
-}
+#center-container {
 
-main {
-    background-image: url(https://vignette.wikia.nocookie.net/scottpilgrim/images/3/35/Scott_p_by_radiomaru.png/revision/latest?cb=20101123010423);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-attachment: fixed;;
-    background-size: 20%;
-    font-family: 'Karma', serif;
-
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 
 }
 
-ul {
-    list-style-image: url("https://secure.gravatar.com/avatar/200f2a31fcab3c6c4fff71d2a19eb0cb?s=40&d=mm&r=g");
-
-}
-
-th, td {
+.table-center {
     border-bottom: 3px solid #ddd;
     font-size: 2em;
     padding: 10px 80px 10px 80px;
-
-
+    text-align: center;
 }
 
  a:link {
@@ -72,6 +96,26 @@ a:hover {
 
 a:active {
     color:green;
+}
+
+.vision {
+    width: 100%;
+    margin-top: 30%;
+    margin-bottom: 20%;
+    clear: both;
+    text-align: center;
+}
+
+.main-image {
+
+    margin-left: .5%;
+    margin-right: .5%;
+    width: 20%;
+    height: 20%;
+}
+
+#container-margin {
+    margin-top: 5%;
 }
 
 
