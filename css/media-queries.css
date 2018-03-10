@@ -2,10 +2,19 @@
 .nav-links {
    list-style-type: none;
    padding-left: 0;
+    text-align: center;
 }
 
 body  {
     margin: 15px;
+    
+}
+
+#social-media-links{
+    display: none;
+
+}
+h1{
     text-align: center;
 }
 section {
@@ -13,7 +22,7 @@ section {
 }
 .header-img >img {
     width: 100%;
-    max-width: 425px;
+    max-width: 1200px;
     height: auto;
 }
 
@@ -24,6 +33,7 @@ section {
     margin-bottom: 15px;
     padding-top: 20px;
     padding-bottom: 20px;
+    text-align: center;
 
 }
 li {
@@ -43,11 +53,19 @@ li {
         display: none;
     }
 
-    li {
-        display: inline-block;
+    .nav-links{
+        margin-top: 27px;
         float: right;
+    }
+
+    
+    ul>li {
+        display: inline;
         background-color: transparent;
-        padding-right: 15px;
+
+    }
+    li:not(:last-child) {
+        padding-right: 20px;
     }
     
     .header-img>img {
@@ -58,6 +76,7 @@ li {
     }
     h1 {
         float: left;
+
     }
 
     section {
@@ -65,34 +84,51 @@ li {
     }
 
     .sub-section {
-        width: 30%;
+        width: 250px;
         margin: 0;
-
     }
 
     .main {
-        width: 60%;
+        width: 458px;
         padding-right: 30px;
 
 
     }
+    .social-media-links {
+
+    }
+
+    footer {
+        clear: both;
+        height: 100px;
+        width: 100%;
+    }
+    
     footer>p {
+        margin-top: 70px;
+        position: absolute;
         float: left;
-        top: 250px;
-        margin-top: 300px;
     }
 
-    #social-media-links>a {
+  #social-media-links {
+      position: static;
+      float: right;
+      display: block;
+margin-top: 50px;
 
 
+        
 
+
+        
     }
-    #social-media-links>img {
+    .soc-img {
+        height: 50px;
         width: 50px;
-        height: auto;
-
-
     }
+
+
+
 
     
 
