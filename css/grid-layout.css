@@ -1,0 +1,39 @@
+
+.container{
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+
+}
+.row {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*this is a modern use of a clear fix*/
+.row:after{
+    /*content with empty string will give artificial content to set a height*/
+    content: '';
+    /*display table makes your element act like a table*/
+    display: table;
+    clear: both;
+}
+.column {
+    border: 1px solid black;
+    float: left;
+    padding: 10px;
+    background-color: #dddddd;
+    box-sizing: border-box ;
+}.column.one-third {
+     width: 33.33%;
+ }
+ .column.one-fourth {
+     width: 25%;
+ }
+ .column.one-eighth {
+     width: 12.5%;
+ }
+ .column.one-half {
+     width: 50%;
+ }
