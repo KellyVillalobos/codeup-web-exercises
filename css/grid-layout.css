@@ -50,3 +50,18 @@
 .three-sixth {
     width: 50%;
 }
+
+.offset-one-half{
+    margin-left: 50%;
+}
+.offset-one-third{
+    margin-left: 33.33%;
+}
+.offset-two-third{
+    margin-left: 66.66%;
+
+}
+.offset-one-fourth{
+    margin-left: 25%;
+
+}
