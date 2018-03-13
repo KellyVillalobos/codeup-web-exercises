@@ -6,6 +6,9 @@
    padding-left: 0;
     text-align: center;
 }
+a {
+    text-decoration: none;
+}
 
 body  {
     margin: 15px;
@@ -52,32 +55,7 @@ li {
 /*Desktop layout*/
 @media screen and (min-width:768px){
 
-    .container {
-        margin: 0 auto;
-        width: 100%;
-        max-width: 1200px;
-    }
-    .row {
-        width: 100%;
 
-    }
-    .row:after {
-        /*content with empty string will give artificial content to set a height*/
-        content: '';
-        /*display table makes your element act like a table*/
-        display: table;
-        clear: both;
-    }
-    .column {
-        /*border: 1px solid black;*/
-        float: left;
-        padding: 10px;
-        /*background-color: #dddddd;*/
-        box-sizing: border-box;
-    }
-    .column.one-half {
-        width: 50%;
-    }
 
     .hidden-on-desktop {
         display: none;
@@ -122,11 +100,6 @@ li {
     .main {
         /*width: 458px;*/
         padding-right: 30px;
-
-
-    }
-    .social-media-links {
-
     }
 
     footer {
@@ -140,31 +113,15 @@ li {
         position: absolute;
         float: left;
     }
-
-  #social-media-links {
+    #social-media-links {
       position: static;
       text-align: right;
       display: block;
-
-
-
-        
-
-
-        
     }
     .soc-img {
         height: 50px;
         width: 50px;
     }
-
-
-
-
-    
-
-    
-
 }
 
 
