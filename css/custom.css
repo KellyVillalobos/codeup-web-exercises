@@ -1,0 +1,19 @@
+.jumbotron{
+    background-image: url("../img/pizza-img.png");
+
+}
+h1{
+
+    text-align: center;
+    background-color: white;
+    opacity: .6;
+}
+.badge-pill {
+    font-weight: lighter;
+    border-radius: 45%;
+    height: 1.5em;
+    width: 1.5em;
+}
+.btn {
+    float: right;
+}
