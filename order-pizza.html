@@ -7,6 +7,8 @@
     <title>Order Online</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
     <link rel="stylesheet" href="css/custom.css">
 
     <!-- Your custom styles go here -->
@@ -15,6 +17,7 @@
     </style>
 </head>
 <body>
+
 
 <!-- Image and text -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -31,7 +34,16 @@
             <a class="nav-item nav-link active" href="#">Order Online <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="#">Menu</a>
         </div>
+        <form class="form-inline my-2 my-lg-0 ml-3">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search stores near you</button>
+        </form>
+
     </div>
+    <div class="col d-none d-sm-none d-md-block d-xl-none">
+        <button type="submit" class="btn btn-primary h-10"><i class="material-icons">person</i>Sign in</button>
+    </div>
+
 
 </nav>
 <div class="d-none d-sm-block d-sm-none d-md-block">
@@ -81,11 +93,11 @@
                                     Garlic seasoned crust with rich, buttery taste.
                                 </div>
                                 <ul class="list-group">
-                                    <li class="list-group-item"><input type="radio" name="tossed" value="small"
+                                    <li class="list-group-item"><input type="radio" name="crust" value="small"
                                                                        aria-label="Radio button for following text input">
                                         Small(10")
                                     </li>
-                                    <li class="list-group-item"><input type="radio" name="tossed" value="medium"
+                                    <li class="list-group-item"><input type="radio" name="crust" value="medium"
                                                                        aria-label="Radio button for following text input">
                                         Medium(12")
                                     </li>
@@ -159,8 +171,8 @@
                         </div>
                         <div class="card-footer">
 
-                            <a href="#" class="btn btn-primary">Next Step ></a>
-                            <a href="#" class="btn btn-primary">< Previous Step</a>
+                            <a href="#" class="btn btn-primary ml-2">Next Step ></a>
+                            <a href="#" class="btn btn-primary ml-2">< Previous Step</a>
                         </div>
                     </div>
 
@@ -223,7 +235,9 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Checkout</a>
+                            <a href="#" class="btn btn-primary ml-2"><i class="material-icons">shopping_cart</i>
+                                Checkout</a>
+                            <a href="#" class="btn btn-primary ml-2">< Previous Step</a>
 
                         </div>
                     </div>
