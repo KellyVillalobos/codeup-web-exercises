@@ -16,4 +16,15 @@ h1{
 }
 .btn {
     float: right;
-}
+}.material-icons{
+     float: left;
+     padding-right: 6;
+ }
+
+ #menu-position{
+     clear: both;
+
+
+ }
+
+
