@@ -74,7 +74,7 @@ alert("able to enrol: " + canEnroll);
 
 //his answer
 
-var itemsBought = parseInt(prompt('how many items were bought?'));
+var itemsBought = parseInt(prompt('how many items were bought?')) >=3;
 var isOfferValid = prompt('isthe offer valid?') === 'yes';
 var isPremiumMember = prompt('are you a premium member?') === 'yes';
 
