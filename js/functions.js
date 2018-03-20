@@ -176,7 +176,7 @@ console.log(decrement(5));
 /**Write a function named hasSpaces that accepts a string and returns true if the string contains any space characters*/
 
 function hasSpaces(string){
-    return (string.trim().length === string.length);
+    return (string.indexOf(' ') >= 1);
 }
 
 console.log(hasSpaces("this has spaces."));
@@ -225,7 +225,7 @@ console.log(double(10));
 /**Write a function named isValidPassword that accepts a string and returns a boolean value based on the rules from the working with data types exercise*/
 
 function isValidPassword(string){
-    return (string.trim() !== string.length);
+    return (string.trim().length === string.length);
 }
 
 console.log(isValidPassword('notastrongpassword'));
