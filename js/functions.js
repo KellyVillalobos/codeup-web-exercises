@@ -99,9 +99,9 @@ console.log(calculateTip(.20, 20));
  * then display the dollar amount they should tip
  */
 
-var userInputTip = parseInt(prompt("what percent would you like to tip?"));
-userInputTip = (userInputTip / 100);
-console.log(calculateTip(userInputTip, 20));
+// var userInputTip = parseInt(prompt("what percent would you like to tip?"));
+// userInputTip = (userInputTip / 100);
+// console.log(calculateTip(userInputTip, 20));
 
 
 /**
@@ -130,5 +130,112 @@ function applyDiscount(originalPrice, discountPercent){
 console.log(applyDiscount(100, .5));
 console.log(applyDiscount(100, .10));
 
+/**Write a function named identity that defines one parameter and returns the argument it was called with.*/
 
+function identity(x){
+    return (x >= 10);
+
+}
+
+console.log(identity(5));
+console.log(identity(24));
+
+/**Write a function named isOdd that accepts a number and returns true if the passed number is odd, otherwise false*/
+
+function isOdd(x){
+
+    return (x % 2 !== 0);
+}
+
+console.log(isOdd(2));
+
+/**Write a function named isEven that accepts a number and returns true if the passed number is even, false otherwise*/
+
+function isEven(x){
+    return (x % 2 === 0);
+
+}
+
+console.log(isEven(2));
+
+/**Write a function named isPositive that returns true if the passed number is greater than 0*/
+
+function isPositive(x){
+    return (x > 0);
+}
+
+console.log(isPositive(3));
+
+/**Write a function named decrement that accepts a number and returns the number minus 1*/
+
+function decrement(x){
+    return (x - 1);
+}
+console.log(decrement(5));
+
+/**Write a function named hasSpaces that accepts a string and returns true if the string contains any space characters*/
+
+function hasSpaces(string){
+    return (string.trim().length === string.length);
+}
+
+console.log(hasSpaces("this has spaces."));
+
+
+
+/**Write a function named isFive that accepts a number and returns true if the number is equal to 5*/
+
+function isFive(x){
+    return (x === 5);
+}
+
+console.log(isFive(5));
+
+/**Write a function named square that accepts a number and returns the number times itself*/
+
+function square(x){
+    return (x * x);
+}
+
+console.log(square(3));
+
+/**Write a function named cube that accepts a number and returns the number times itself times itself*/
+
+function cube(x){
+    return (x * x * x);
+}
+
+console.log(cube(10));
+/**Write a function named half that accepts a number and returns the number halved*/
+
+function half(x){
+    return (x / 2);
+}
+
+console.log(half(4));
+
+/**Write a function named double that accepts a number and returns the number doubled*/
+
+function double(x){
+    return (x * 2);
+}
+
+console.log(double(10));
+
+/**Write a function named isValidPassword that accepts a string and returns a boolean value based on the rules from the working with data types exercise*/
+
+function isValidPassword(string){
+    return (string.trim() !== string.length);
+}
+
+console.log(isValidPassword('notastrongpassword'));
+
+
+/**A triangle with sides a, b, and c is a right triangle iff a squared plus b squared is equal to c squared. Write a function named isRightTriangle with parameters a, b, and c that will be numbers, and that tells if the passed sides can make a right triangle (returns a boolean).*/
+
+function isRightTriangle(a, b, c){
+    return (square(a) + square(b) === square(c));
+}
+
+console.log(isRightTriangle(3, 4, 5));
 
