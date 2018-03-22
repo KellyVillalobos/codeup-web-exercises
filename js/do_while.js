@@ -12,7 +12,7 @@ do {
         allCones = allCones - conesBought;
         console.log("i have " + allCones + " left.");
     }
-} while (allCones > 0);
+} while (allCones = 0);
 
 console.log("Yay I sold all my cones!!");
 
