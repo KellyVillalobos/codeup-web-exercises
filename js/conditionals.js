@@ -139,7 +139,7 @@ switch (randomColor) {
         break;
     default:
         console.log("this is not a color in the rainbow.");
-        break;
+
 }
 
 
@@ -180,23 +180,23 @@ function calculateTotal(luckyNumber, totalAmount){
     if (luckyNumber === 1){
         alert("you lucky number is " + luckyNumber);
         alert("your price before lucky discount was " + totalAmount);
-        alert("your total after discount is " + (totalAmount - (totalAmount * .10)));
+        alert("your total after discount is " + (totalAmount - (totalAmount * .10).toFixed(2)));
     }else if (luckyNumber === 2){
         alert("you lucky number is " + luckyNumber);
         alert("your price before lucky discount was " + totalAmount);
-        alert("your total after discount is " + (totalAmount - (totalAmount * .25)));
+        alert("your total after discount is " + (totalAmount - (totalAmount * .25).toFixed(2)));
     }else if (luckyNumber === 3){
         alert("you lucky number is " + luckyNumber);
         alert("your price before lucky discount was " + totalAmount);
-        alert("your total after discount is " + (totalAmount - (totalAmount * .35)));
+        alert("your total after discount is " + (totalAmount - (totalAmount * .35).toFixed(2)));
     }else if (luckyNumber === 4){
         alert("you lucky number is " + luckyNumber);
         alert("your price before lucky discount was " + totalAmount);
-        alert("your total after discount is " + (totalAmount - (totalAmount * .50)));
+        alert("your total after discount is " + (totalAmount - (totalAmount * .50).toFixed(2)));
     }else if (luckyNumber === 5){
         alert("you lucky number is " + luckyNumber);
         alert("your price before lucky discount was " + totalAmount);
-        alert("your total after discount is " + (totalAmount - (totalAmount * 1.0)));
+        alert("your total after discount is " + (totalAmount - (totalAmount * 1.0).toFixed(2)));
     }
 }
 
@@ -204,7 +204,7 @@ var luckyNumber = Math.floor(Math.random() * 5);
 console.log(luckyNumber);
 
 var totalAmount = prompt("enter your bill total");
-console.log(calculateTotal(luckyNumber, totalAmount)).toFixed(2);
+console.log(calculateTotal(luckyNumber, totalAmount));
 
 
 
