@@ -6,7 +6,6 @@
 //3. used the number after the last number to stop at the last number.
 var i = 1;
 while (i <= 32768) {
-    console.log('while loop iteration #' + i);
     console.log(2 * i);
     i = i * 2;
 }
