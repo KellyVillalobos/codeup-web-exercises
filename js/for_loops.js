@@ -1,5 +1,5 @@
 
-
+"use strict"
 
 
     // Create a function named showMultiplicationTable that accepts a number and console.logs the multiplication table for
@@ -43,15 +43,15 @@
         return (x % 2 === 0);
     }
 
+function randomInt(start, end) {
+    return Math.floor(Math.random() * (end - start)) + start;
+}
 
-
-        for (var i = 1; i < 11; i++) {
-            var number = Math.floor(Math.random() * 180) + 20;
+        for (var i = 1; i <= 10; i++) {
+             number = randomInt(20, 200);
             if (isOdd(number)){
                 console.log(number + " is odd.");
-            }else {
-                (isEven(number));
-
+            }else if (isEven(number)){
                 console.log(number + " is even.");
 
             }
@@ -68,13 +68,24 @@
 
     // Create a for loop that uses console.log to create the output shown below.
 
-    for (var i = 1; i < 10; i++){
+    for (var i = 1; i <= 9; i++){
         var a = "";
         for(var b = 1; b <= i; b++){
               a += i;
 
         }console.log(a)
 
+    }
+
+    //a shorter and better way
+    for (var i = 1; i <= 9; i++){
+        i = i.toString();
+        console.log(i.repeat(i));
+    }
+var string;
+    for (var i = 1; i <= 9; i++){
+        string = i.substring(i.length - 1);
+        console.log(string.repeat(i));
     }
 
 
@@ -99,6 +110,7 @@
         }console.log(number)
 
     }
+
 
     // 100
     // 95

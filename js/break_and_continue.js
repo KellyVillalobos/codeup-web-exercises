@@ -1,3 +1,5 @@
+"use strict";
+
 // Prompt the user for an odd number between 1 and 50. Use a loop and a break statement to continue prompting the user if
 //     they enter invalid input.
 //     Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number the
@@ -39,13 +41,11 @@ function isOdd(x){
 function isEven(x) {
     return (x % 2 === 0);
 }
-function isNumeric(input) {
-    // need to check for numeric strings and return true for "123"
-    return !isNaN(parseFloat(input));
-}
+
 
 
 var userInput = prompt("enter an odd number between 1 and 50.");
+
 while(true) {
     if (isEven(userInput)){
         userInput = prompt("INVALID!! Please enter an odd number between 1 and 50");
@@ -65,3 +65,25 @@ for(var i = 1; i < 50; i++){
     }
 
 }
+
+//do while
+var number;
+do{
+    number = parseFloat(prompt ("please input a number between 1 - 50"));
+    if(isOdd(number) && (number < 50 && number >= 1)){
+        break;
+    }
+}while (true);
+
+console.log("the number to skip is: " + number);
+
+for(var i = 1; i <= 50; i++){
+    if(i === number){
+        console.log("yikes! Skipping number: " + i);
+        continue;
+    }if(isOdd(i)){
+        console.log("here is an odd number: " + i)
+    }
+}
+
+
