@@ -1,3 +1,5 @@
+"use strict"
+
 var allCones = Math.floor(Math.random() * 50) + 50;
 
 var conesBought = Math.floor(Math.random() * 5) + 1;

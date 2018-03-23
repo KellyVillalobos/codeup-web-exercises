@@ -82,14 +82,16 @@ console.log(isTwo(random));
  */
 
 
-function calculateTip(x, y) {
-    var result = x * y;
-    return result;
+function calculateTip(percentage, total) {
+    var tipAmount = percentage * total;
+    return tipAmount;
 }
 
 
 
-console.log(calculateTip(.20, 20));
+console.log('calculateTip(0.20, 20): ' + calculateTip(.20, 20));
+console.log('calculateTip(0.25, 25.50): ' + calculateTip(.25, 25.50));
+console.log('calculateTip(0.15, 33.42): ' + calculateTip(.20, 33.42));
 
 
 /**
@@ -99,9 +101,9 @@ console.log(calculateTip(.20, 20));
  * then display the dollar amount they should tip
  */
 
-// var userInputTip = parseInt(prompt("what percent would you like to tip?"));
-// userInputTip = (userInputTip / 100);
-// console.log(calculateTip(userInputTip, 20));
+var userInputTip = parseInt(prompt("what percent would you like to tip?"));
+userInputTip = (userInputTip / 100);
+console.log(calculateTip(userInputTip, 20));
 
 
 /**
@@ -176,7 +178,7 @@ console.log(decrement(5));
 /**Write a function named hasSpaces that accepts a string and returns true if the string contains any space characters*/
 
 function hasSpaces(string){
-    return (string.indexOf(' ') >= 1);
+    return (string.indexOf(' ') >= 0);
 }
 
 console.log(hasSpaces("this has spaces."));
