@@ -1,20 +1,21 @@
 "use strict"
 
+
+
+
+
 var allCones = Math.floor(Math.random() * 50) + 50;
 
-var conesBought = Math.floor(Math.random() * 5) + 1;
-
-console.log("i have " + allCones + " this morning.");
-
 do {
+    var conesBought = Math.floor(Math.random() * 5) + 1;
 
-    if (allCones < conesBought) {
-        console.log("sorry I can't sell you " + conesBought + " I only have " + allCones);
-    } else {
-        allCones = allCones - conesBought;
-        console.log("i have " + allCones + " left.");
+    if(conesBought <= allCones){
+        console.log(allCones + ' cones sold');
+        allCones -= conesBought
+    }else{
+        console.log('Cannont sell you ' + conesBought + " cones I only have" + allCones + '....')
     }
-} while (allCones = 0);
+} while (allCones > 0);
 
 console.log("Yay I sold all my cones!!");
 
