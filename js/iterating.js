@@ -27,16 +27,28 @@ console.log(names[3]);
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
+
     for(var i = 0; i < names.length; i++){
-        console.log(names[i]);
+        console.log(names[i], i, names);
     }
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-    names.forEach(function(name) {
-        console.log('here is a the name ' + name + '.')
+    names.forEach(function(name, index, array) {
+        console.log('here is the name ' + name + '.');
+        console.log('here is the index' + index + '.');
+        console.log('here is the array' + array + '.');
     });
+
+    //or
+
+    names.forEach(showName);
+
+    function showName(name, i){
+        console.log(name);
+        console.log(i);
+    }
     /**
      * TODO:
      * Create the following three functions, each will accept an array and
