@@ -1,6 +1,40 @@
 (function() {
     "use strict";
 
+
+
+    var name = {
+        "firstName": "kelly",
+        "lastName": "villalobos"
+    };
+    console.log(name);
+
+
+    var person = name;
+    console.log(person.firstName);
+    console.log(person.lastName);
+
+    var sayHello = function(){
+        return ("Hello from " + person.firstName + " " + person.lastName)
+    };
+
+    console.log(sayHello());
+
+    //or
+
+    // var name = {};
+    // name['firstName'] = 'kelly';
+    // name['lastName'] = 'villalobos';
+    //
+    // console.log(name.firstName);
+    // console.log(name.lastName);
+
+    // name.sayHello = function(){
+    //     return "hello from " + this.firstName + " " + this.lastName;
+    // };
+    //
+    // console.log(name.sayHello());
+
     /**
      * TODO:
      * Create an object with firstName and lastName properties that are strings
@@ -12,16 +46,6 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    var name = {
-        "firstName": "kelly",
-        "lastName": "villalobos"
-    };
-    console.log(name);
-
-    var person = name;
-    console.log(person.firstName);
-    console.log(person.lastName);
-
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -32,11 +56,14 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-    var sayHello = function(){
-        return ("Hello from " + person.firstName + " " + person.lastName)
-    };
 
-    console.log(sayHello());
+
+
+
+
+
+
+
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -63,18 +90,23 @@
         if(shopper.amount > 200){
             var discount = shopper.amount * .12;
             var shopperTotal = shopper.amount - discount;
-            console.log(shopper.name + " owes: "  + shopper.amount);
-            console.log(shopper.name + " discount is " + discount);
-            console.log(shopper.name + " total is = " + shopperTotal);
+            console.log(shopper.name + " owes: "  + "$" + shopper.amount.toFixed(2));
+            console.log(shopper.name + "'s discount is " + "$" + discount.toFixed(2));
+            console.log(shopper.name + "'s total is = " + "$" + shopperTotal.toFixed(2));
 
 
         }else{
-            console.log(shopper.name + " owes: " + shopper.amount);
+            console.log(shopper.name + " owes: " + "$" + shopper.amount.toFixed(2));
             console.log(shopper.name + " did not spend enough, he doesn't get a discount.");
+            console.log(shopper.name + "'s total is " + shopper.amount.toFixed(2))
         }
 
 
     });
+
+
+
+
 
 
     /** TODO:
@@ -177,6 +209,8 @@
      *      ...
      */
 
+
+
         for(var i = 0; i < books.length; i++){
             console.log("Book # " + (i + 1));
             console.log("Title: " + books[i].title);
@@ -217,6 +251,32 @@
         console.log("Author: " + newBooks[i].author.firstName + " " + newBooks[i].author.lastName);
     }
 
+    //or
+
+    //var books = []
+
+    // for(var i = 0; i < newBooks.length; i++){
+    //     showBookInfo(books[i], i);
+    // }
+
+    //or
+
+    // add a book:  books.push(createBook("title", "author"));
+    // replace a book: books[4] = createBook("title", "author);
+
+    // books.forEach(showBookInfo);
+
+
+
+    // function crateBook(title, author){
+    //
+    // }
+
+    // function showBookInfo(book, index){
+    //     console.log("Book # " + (index + 1));
+    //     console.log("title: " + book.title);
+    //     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    // }
 
 
 })();
