@@ -193,4 +193,30 @@
      *   `showBookInfo` function.
      */
 
+    var newBooks = [];
+
+    function createBook(title, author){
+        return {
+            title: title,
+            author: author
+        }
+    }
+    function showBookInfo(title, author){
+        var b = createBook(title, author);
+        newBooks.push(b);
+    }
+
+    showBookInfo("The Rising Sea", {firstName: "Clive", lastName: "Cussler"});
+    showBookInfo("Camino Island", {firstName: "John", lastName: "Grisham"});
+    showBookInfo("Ready Player One", {firstName: "Earnst", lastName: "Cline"});
+    showBookInfo("Dearest Ivy", {firstName: "J.R.", lastName: "Ward"});
+
+    for(var i = 0; i < newBooks.length; i++){
+        console.log("Book # " + (i + 1));
+        console.log("Title: " + newBooks[i].title);
+        console.log("Author: " + newBooks[i].author.firstName + " " + newBooks[i].author.lastName);
+    }
+
+
+
 })();
