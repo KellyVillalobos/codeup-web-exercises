@@ -14,7 +14,7 @@
             var itemCost = (parseFloat(expense.cost.replace(/\$|,/g, '')));
             totalCost += itemCost;
 
-        })
+        });
 
     console.log("Total expenses are: " + "$" + totalCost.toLocaleString());
 
