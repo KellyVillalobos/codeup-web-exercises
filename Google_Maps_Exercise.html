@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps Exercise</title>
+    <!--this is the style to give your map a dimension-->
+    <style>
+        #map-canvas {
+            width: 500px;
+            height: 400px;
+
+        }
+    </style>
+</head>
+<body>
+
+<div id="map-canvas"></div><!--this is a div to hold your map-->
+<!--this is a script tag to hold your google API key-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTZOQSjuHiDdLHQJ4BVX7gYfdD7gG2fhs"></script>
+
+<script>
+    var mapOptions = {
+        zoom: 10,
+        center: {
+            lat: 29.424122,
+            lng: -98.493629
+        },
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var mapCanvas = document.getElementById("map-canvas");//this calls to your div with the ID of map.
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+    var geocoder = new google.maps.Geocoder();
+
+    var addresses = {
+         address: "3506 N St Mary's St, San Antonio, TX 78212"
+
+    };
+
+    function callback(results, status, restaurant) {
+        if (status === google.maps.GeocoderStatus.OK) {
+
+            map.setCenter(results[0].geometry.location);
+            map.setZoom(15);
+            var marker = new google.maps.Marker({
+                position: results[0].geometry.location,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                //icon: ""
+
+
+            });
+
+            var info = new google.maps.InfoWindow({
+                content: restaurant.info
+            });
+            marker.addListener('click', function () {
+                info.open(map, marker);
+            });
+            marker.addListener('click', toggleBounce);
+
+            function toggleBounce() {
+                if (marker.getAnimation() !== null) {
+                    marker.setAnimation(null);
+                } else {
+                    marker.setAnimation(google.maps.Animation.BOUNCE);
+                }
+            }
+
+
+        } else {
+            alert("Geocoding was not successful STATUS - " + status);
+        }
+
+    }
+
+    var restaurants = [
+        {
+            address: "2922 Broadway St, San Antonio, TX 78209",
+            info: "<strong>Good Time Charlies</strong><br><br><img src='https://content.idine.com/images/merchant/restaurant_images/871505P1.jpg' height='143' width='250'>"
+        },
+        {
+            address: "3210 Broadway St, San Antonio, TX 78209",
+            info: "<strong>Tomatillo's</strong><br><br><img src='' height='183' width='265.5'>"
+        },
+        {
+            address: "3506 N St Mary's St, San Antonio, TX 78212",
+            info: "<strong>Bombay Bicycle Club</strong><br><br><img src='http://visitsanantonio.com/VisitSanAntonio/files/f4/f4173ec2-e06c-48ea-852a-5403ad541bda.jpg' height='210.5' width='345.5'>"
+        }
+    ];
+    //forEach
+    restaurants.forEach(function (restaurant) {
+        geocoder.geocode({address: restaurant.address}, function (results, status) {
+            callback(results, status, restaurant);
+        })
+    });
+</script>
+
+</body>
+</html>
