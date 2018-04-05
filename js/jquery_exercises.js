@@ -1,4 +1,10 @@
 'use strict';
-$(document).ready(function() {
-    alert( 'The DOM has finished loading!' );
+$('li').css({
+    "font-size": "20px"
 });
+
+$("h1, p, li").css({
+    "background-color": "red"
+});
+var contents = $('h1').html();
+alert(contents);
