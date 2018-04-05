@@ -1,6 +1,10 @@
 'use strict';
-$(document).ready(function() {
-    alert( 'The DOM has finished loading!' );
+$('h1').css({
+    "background-color": "red"
 });
-var container = $("#list-item1").html("these are selected jquery objects");
-alert(container);
+$('p').css({
+    "background-color": "red"
+});
+$('li').css({
+    "background-color": "red"
+});
