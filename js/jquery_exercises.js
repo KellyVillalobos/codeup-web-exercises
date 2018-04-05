@@ -1,10 +1,4 @@
 'use strict';
-$('li').css({
-    "font-size": "20px"
+$(".codeup").css({
+    "border": "1px solid red"
 });
-
-$("h1, p, li").css({
-    "background-color": "red"
-});
-var contents = $('h1').html();
-alert(contents);
