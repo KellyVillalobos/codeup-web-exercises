@@ -1,4 +1,6 @@
 'use strict';
-$(".codeup").css({
-    "border": "1px solid red"
+$(document).ready(function() {
+    alert( 'The DOM has finished loading!' );
 });
+var container = $("#list-item1").html("these are selected jquery objects");
+alert(container);
