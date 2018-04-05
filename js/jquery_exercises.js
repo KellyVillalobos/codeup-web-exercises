@@ -1,10 +1,4 @@
 'use strict';
-$('h1').css({
-    "background-color": "red"
-});
-$('p').css({
-    "background-color": "red"
-});
-$('li').css({
+$("h1, li, p").css({
     "background-color": "red"
 });
