@@ -868,7 +868,7 @@
         }
     ];
 
-    console.log(arrayOfProfiles);
+
     // Produce a new object called var report and console.log it's contents
     // Report should display
     //  - total number of profiles
@@ -893,8 +893,9 @@
                     i++;
                 }
             });
-                return i;
+                return "Total number of active profiles: " + i;
         },
+
         getBalance: function(){
 
             var totalBalance = 0;
@@ -904,8 +905,79 @@
 
 
             });
-                return "$" + totalBalance.toLocaleString();
-            }
+                return "Total balance of all profiles: " + "$" + totalBalance.toLocaleString();
+            },
+
+        getAverage: function(){
+            var totalBalance = 0;
+            arrayOfProfiles.forEach(function (profile) {
+                var balance = (parseFloat(profile.balance.replace(/\$|,/g, '')));
+                 totalBalance += balance;
+            });
+             var average = (totalBalance / arrayOfProfiles.length);
+            return "Average user balance: " + "$" + average.toLocaleString(undefined, {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            })
+
+        },
+        getAverageAge: function(){
+            var age = 0;
+            arrayOfProfiles.forEach(function (profile) {
+                age += profile.age / arrayOfProfiles.length;
+            });
+            return "Average age: " + age.toFixed(0);
+
+        },
+        getGender: function(){
+           var male = 0;
+           var female = 0;
+           for(var i = 0; i<arrayOfProfiles.length; i++){
+               if(arrayOfProfiles[i].gender ==='male'){
+                   male++;
+
+               }else{
+                   female++;
+               }
+
+           }
+                return "Male: " + male + "\n" + "Female: " + female;
+
+        },
+        getCompanies: function () {
+            var companyList = [];
+            arrayOfProfiles.forEach(function (profile) {
+                companyList.push(profile.company);
+
+            });
+            return "list of user companies: " + companyList.join("\n");
+
+
+        },
+        getCommonEyeColor: function(){
+           var mostFrequent = 1;
+           var m = 0;
+           var item;
+           for(var i = 0; i<arrayOfProfiles.length; i++){
+               for(var j = i; j<arrayOfProfiles.length; j++){
+                   if(arrayOfProfiles[i].eyeColor == arrayOfProfiles[j].eyeColor)
+                       m++;
+                   if(mostFrequent<m){
+                       mostFrequent=m;
+                       item = arrayOfProfiles[i].eyeColor;
+                   }
+               }
+                m=0;
+           }
+           return "The most common eye color is: " + item;
+        },
+        compareBalance: function () {
+
+        }
+
+
+
+
 
 
 
@@ -918,10 +990,15 @@
         };
 
 
-    console.log(report.numberOfProfiles);
+    console.log("total number of profiles: " + report.numberOfProfiles);
     console.log(report.getNumberOfActiveProfiles());
     console.log(report.getBalance());
-
+    console.log(report.getAverage());
+    console.log(report.getAverageAge());
+    console.log(report.getGender());
+    console.log(report.getCompanies());
+    console.log(report.getCommonEyeColor());
+    console.log(report.compareBalance());
 
 // var number$ = "$4,345.50";
 // console.log(parseFloat((number$.replace(/\$|,/g, ''))))

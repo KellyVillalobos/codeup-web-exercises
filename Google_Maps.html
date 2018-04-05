@@ -2,9 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        #map-canvas{
+            width: 500px;
+            height: 400px;
+        }
+
+    </style>
+
+
 </head>
 <body>
-$END$
+
+<div id="map-canvas"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgzeL11eLUeY-ex-T7HEnVzx63A1BvtDo"></script>
+<script>//<-- this is required to activate google maps with your key you requested from the
+//google maps api website
+    var mapOptions = {
+        zoom: 19,
+        center: {
+            lat: 29.426791,
+            lng: -98.489602
+        },
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var mapCanvas = document.getElementById('map-canvas');
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+
+    var geocoder = new google.maps.Geocoder();
+
+    var address ={
+        address: "300 Alamo Plaza, San Antonio, Tx, 78205"
+    };
+    function callback(results, status){
+        if(status === google.maps.GeocoderStatus.OK){
+            // console.log(results[0].geometry.location);
+             map.setCenter(results[0].geometry.location);
+             var marker = new google.maps.Marker({
+                 position: results[0].geometry.location,
+                 map: map
+             });
+             var info = new google.maps.InfoWindow({
+                 content: "this is the <strong>info</strong> <br> window content!!"
+             });
+             info.open(map, marker)
+
+        }else{
+            alert("Geocoding was not successful - STATUS: " + status);
+        }
+
+    }
+
+
+    geocoder.geocode(address, callback);
+</script>
+
 </body>
 </html>
