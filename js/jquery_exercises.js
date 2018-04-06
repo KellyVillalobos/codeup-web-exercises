@@ -6,7 +6,17 @@ function changeColor() {
     }else{
         $('h1').css('background-color', 'transparent');
     }
-console.log($('h1').css('background-color'));
+
 }
 
 $('h1').on('click', changeColor);
+
+function changeParaColor() {
+    if ($('p').css('background-color') === "rgba(0, 0, 0, 0)") {
+        $('p').css('background-color', 'red');
+    } else {
+        $('p').css('background-color', 'transparent');
+    }
+}
+
+$('p').dblclick(changeParaColor);
