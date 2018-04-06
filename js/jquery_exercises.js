@@ -20,3 +20,14 @@ function changeParaColor() {
 }
 
 $('p').dblclick(changeParaColor);
+
+function changeListColor(){
+    if ($('li').css('color') === "rgb(0, 0, 0)") {
+        $('li').css('color', 'red');
+    } else {
+        $('li').css('color', "rgb(0, 0, 0)");
+    }
+console.log(($('li').css('color')));
+}
+
+$('li').hover(changeListColor);
