@@ -12,9 +12,13 @@ function changeColor() {
 $('h1').on('click', changeColor);
 
 function changeParaColor() {
+    if($("p").css('font-size') === '16px'){
     $('p').css('font-size', '18px');
+    }else{
+        $('p').css('font-size', '16px');
+    }
 }
-
+console.log($('p').css("font-size"));
 $('p').dblclick(changeParaColor);
 
 function changeListColor(){
