@@ -78,10 +78,16 @@
 <script>
 
 
+    $('dt').click(function () {
+        $(this).next().toggleClass().css('background-color', 'yellow');
+    });
+
     $('#button').click(function () {
         $('dd').toggleClass();
 
     })
+
+
 
 
 </script>
