@@ -12,11 +12,7 @@ function changeColor() {
 $('h1').on('click', changeColor);
 
 function changeParaColor() {
-    if ($('p').css('background-color') === "rgba(0, 0, 0, 0)") {
-        $('p').css('background-color', 'red');
-    } else {
-        $('p').css('background-color', 'transparent');
-    }
+    $('p').css('font-size', '18px');
 }
 
 $('p').dblclick(changeParaColor);
