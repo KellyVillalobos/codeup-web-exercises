@@ -92,6 +92,15 @@
 
     <!--NATIONAL PARKS TRAVERSING STARTS HERE-->
 
+<div>
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span>X</span>
+</div>
+
+<h2>Please Register For This Site.</h2>
+
+
+
 <button id="reveal">Click to reveal</button>
 
     <h3>Yosemite National Park </h3>
@@ -147,14 +156,42 @@
             });
         });
 
-        $('h3').click(function (event) {
-            $(this).next().children().css('font-weight', 'bold');
-        });
+        // $('h3').click(function (event) {
+        //     $(this).next().children().css('font-weight', 'bold');
+        // });
         $('li').click(function (event) {
             $(this).parent().children().first().css('color', 'blue');
 
 
         });
+
+        $('span').click(function (event) {
+            $('div').hide();
+
+
+        });
+
+        $('ul').hide();
+
+        $('h3').click(function (event) {
+            $('ul').slideToggle();
+
+        });
+
+
+        $('h2').hide();
+        jQuery(document).ready(function() {
+            setTimeout(function() {
+                $('h2').fadeIn(1000);
+
+            }, 8000);
+        });
+
+
+
+
+
+
 
     </script>
 
