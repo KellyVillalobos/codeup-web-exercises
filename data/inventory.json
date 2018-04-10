@@ -52,5 +52,14 @@
       "powered"
     ],
     "price": 50
+  },
+  {
+    "title": "Router",
+    "quantity": 12,
+    "categories": [
+      "tool",
+      "powered"
+    ],
+    "price": 150
   }
 ]
