@@ -10,18 +10,119 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <style>
+        header.masthead {
+            height: 500px;
+            background: center;
+            background-size: cover;
+            background-color: #868e96;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #212529;
+            opacity: 0.5;
+
+        }
+
+        .site-heading {
+            text-align: center;
+            margin-top: 25%;
+        }
+
+        #posts {
+            height: 50rem;
+            width: 100%;
+            border: 1px solid red;
+            margin-top: 50px;
+        }
+
+        .fade-in {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 1s linear;
+        }
+
+        .fade-out {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s 1s, opacity 1s linear;
+        }
+
+        .navbar-brand {
+            font-weight: bolder;
+            font-size: 2rem;
+
+        }
+        #logo{
+            opacity: .8;
+        }
+        footer{
+
+            background-color: #F8F9FA;
+
+        }
+
+
+    </style>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" role="navigation">
+    <div class="container">
+        <a class="navbar-brand" href="#">JaxBlog</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            Menu
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sample Post</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>An Ajax Blog Exercise</h1>
+                    <span class="subheading">Hello Blog!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-<div id="posts">
+<div id="blog" class="row mt-5 pl-4 pr-4">
 
 </div>
 
-
-
-
+<footer class="footer py-3 border-top">
+    <img id="logo" class="mx-auto d-block" src="img/logo_alone_03.png" width="100px" height="99">
+    <small class="d-block mb-3 text-muted text-center py-3">© 2017-2018</small>
+</footer>
 
 
 
@@ -38,6 +139,70 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    (function () {
+        'use strict';
+
+        $(function () {
+            var lastScrollTop = 0;
+            var $navbar = $('.navbar');
+
+            $(window).scroll(function (event) {
+                var st = $(this).scrollTop();
+
+                if (st > lastScrollTop) { // scroll down
+
+                    // use this is jQuery full is used
+                    // $navbar.fadeOut()
+
+                    // use this to use CSS3 animation
+                    $navbar.addClass("fade-out");
+                    $navbar.removeClass("fade-in");
+
+                    // use this if no effect is required
+                    // $navbar.hide();
+                } else { // scroll up
+
+                    // use this is jQuery full is used
+                    // $navbar.fadeIn()
+
+                    // use this to use CSS3 animation
+                    $navbar.addClass("fade-in");
+                    $navbar.removeClass("fade-out");
+
+                    // use this if no effect is required
+                    // $navbar.show();
+                }
+                lastScrollTop = st;
+            });
+        });
+
+
+    })();
+</script>
+<script>
+
+
+        var request = $.ajax('data/blog.json');
+        var html = "";
+        request.done(function (response) {
+            response.forEach(function (blogItem) {
+                html += "<div class='card-group col-sm-6 mb-5'><div class='card'><div class='card-body'><h5 class='card-title text-center'>" + blogItem.title + "</h5><p class='card-text text-center'>" + blogItem.content + "</p><p class='card-text text-center'>" + blogItem.date + "</p></div></div></div>";
+                $('#blog').html(html)
+
+            })
+
+        });
+        request.fail(function (jqXhr, status, message) {
+            console.log(jqXhr, status, message);
+
+
+        });
+
+
+
+</script>
 
 
 </body>
