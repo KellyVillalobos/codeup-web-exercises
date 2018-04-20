@@ -42,28 +42,23 @@ const users = [
 // }
 
 
-
 console.log(users);
-const allLanguages = users
+const allLanguages = users;
 
 
+ // Knows more than 2 languages
 
 
-    .filter(user => user.languages.length > 2); // Knows more than 2 languages
+console.log(users.filter(user => user.languages.length > 2));
+
+ //user email
 
 
-console.log(allLanguages);
-
-allLanguages
-
-    .map(user => user.email); //user email
-
-
-console.log(allLanguages)
+console.log(users.map(user => user.email));
 
 const result = users.reduce((newObject, user) => {
-     newObject[user.id] = user;
-     return newObject;
+    newObject[user.id] = user;
+    return newObject;
 
 }, {});
 console.log(result);
