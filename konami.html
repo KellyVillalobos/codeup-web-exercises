@@ -15,7 +15,7 @@
     //     console.log(event.keyCode);
     // });
     var i = 0;
-    var konamiCode = [38, 40, 38, 40, 37, 39, 37, 39, 65, 66, 13];
+    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
     $(document).keydown(function (event) {
         // console.log(event.keyCode);
         // console.log(konamiCode[i]);
@@ -30,6 +30,19 @@ if(i === konamiCode.length){
 }
 
     });
+
+    //step 1. define the win condition
+    // commit to some wishful thinking:
+    //let's pretend that we got the entire sequence correct
+    //up to, but not including the very last sequence member
+    //assume the last correct key was clicked
+    //how do we figure that out?
+    //      event.key == konamiCode[konamiCode
+
+
+    //step 2. define a partial b/c you're good, but you're not done yet
+    //step 3. define the lose condition (reset)
+
 </script>
 
 
