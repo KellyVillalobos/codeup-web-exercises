@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <style>
+        body{
+            background-color: #444444;
+        }
         .background-color {
             background-color: #ADDDFC;
             background-image: url('img/clouds.png');
@@ -21,7 +24,7 @@
         #map {
             height: 300px;
             margin: auto;
-            width: 79.5%
+            width: 100%
         }
     </style>
 </head>
@@ -32,19 +35,17 @@
             <h1 class="text-left mb-5">Weather Application</h1>
             <h3 id="city" class="text-left"></h3>
         </div>
-
     </div>
     <!--inserting data from jquery script-->
     <div id="insertData" class="row">
     </div>
-
 </div>
-
+<!--google map-->
 <div id="map" class="container"></div>
-
+<!--google map api-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgzeL11eLUeY-ex-T7HEnVzx63A1BvtDo"></script>
 <script src="js/jquery.js"></script>
-
+<!--bootstrap script-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
@@ -52,6 +53,7 @@
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
 
+<!--My script starts here-->
 
 <script>
 
@@ -59,7 +61,7 @@
     //this creates the map and origin
     var myLatlng = new google.maps.LatLng(29.424122, -98.493628);
     var mapOptions = {
-        zoom: 4,
+        zoom: 5,
         center: myLatlng
     };
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
@@ -79,6 +81,7 @@
         lon: -98.493628,
         units: "imperial",
         cnt: 3
+        //Function populates the container with requested information
     }).done(function (response) {
         city += response.city.name;
         $('#city').html(city);
@@ -92,6 +95,7 @@
             $('#insertData').html(html);
         });
     });
+    //Event listener to fire function at end of marker drag
     marker.addListener('dragend', function () {
         var long = marker.position.lng();
         var lat = marker.position.lat();
