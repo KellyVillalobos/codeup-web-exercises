@@ -77,7 +77,8 @@
             var html = "";
             request.done(function (response) {
                 response.forEach(function (item) {
-                    html += '<tr><td>' + item.title + '</td><td>' + item.quantity + '</td><td>' + item.price + '</td><td>' + item.categories + '</td></tr>';
+                    html += '<tr><td>' + item.title + '</td><td>' + item.quantity + '</td><td>' + item.price + '</td>' +
+                        '<td>' + item.categories + '</td></tr>';
                     $('#insertProducts').html(html);
                 })
             });
